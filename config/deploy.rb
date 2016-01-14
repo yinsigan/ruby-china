@@ -17,6 +17,7 @@ set :runner, 'hfpp2012'
 # set :deploy_via, :remote_cache
 set :git_shallow_clone, 1
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
+set :bundle_flags, ''
 
 role :web, '115.28.165.211'
 role :app, '115.28.165.211'
