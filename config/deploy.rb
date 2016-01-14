@@ -8,20 +8,20 @@ default_run_options[:pty] = true
 set :rvm_ruby_string, 'ruby-2.3.0'
 set :rvm_type, :user
 set :application, 'ruby-china'
-set :repository,  'git://github.com/ruby-china/ruby-china.git'
+set :repository,  'git://github.com/yinsigan/ruby-china.git'
 set :branch, 'master'
 set :scm, :git
-set :user, 'ruby'
-set :deploy_to, "/data/www/#{application}"
-set :runner, 'ruby'
+set :user, 'hfpp2012'
+set :deploy_to, "/home/hfpp2012/#{application}"
+set :runner, 'hfpp2012'
 # set :deploy_via, :remote_cache
 set :git_shallow_clone, 1
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 
-role :web, 'ruby-china.org'
-role :app, 'ruby-china.org'
-role :db,  'ruby-china.org', primary: true
-role :queue, 'ruby-china.org'
+role :web, '115.28.165.211'
+role :app, '115.28.165.211'
+role :db,  '115.28.165.211', primary: true
+role :queue, '115.28.165.211'
 
 task :link_shared, roles: :web do
   run "mkdir -p #{shared_path}/log"
